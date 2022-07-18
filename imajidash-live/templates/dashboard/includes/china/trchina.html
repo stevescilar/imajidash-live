@@ -1,0 +1,56 @@
+{% include 'dashboard/includes/china/breadcrumb-china.html' %}
+<hr>
+<div class="row">
+
+    <!-- Column -->
+    <div class="col-md-6 col-lg-2 col-xlg-3">
+        <div class="card card-hover">
+            <div class="box bg-cyan text-center">
+                <h1 class="font-light text-white"><i class="mdi mdi-account-circle"></i></h1>
+                <h6 class="text-white">{{ clients.count}} Clients</h6>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    {% if request.user.is_staff %}
+    <div class="col-md-6 col-lg-2 col-xlg-3">
+        <a href="{% url 'receive-china' %}">
+        <div class="card card-hover">
+            <div class="box bg-warning text-center">
+                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
+                <h6 class="text-white">Recieve Cargo </h6>
+                <!-- <h6 class="text-white">57</h6> -->
+            </div>
+        </a>
+        </div>
+    </div>
+     <!-- Column -->
+     <a href="{% url 'dispatch-china' %}">
+    <div class="col-md-6 col-lg-2 col-xlg-3">
+        <div class="card card-hover">
+            <div class="box bg-warning text-center">
+                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
+                <h6 class="text-white">Load Cargo</h6>
+                <!-- <h6 class="text-white"></h6> -->
+            </div>
+        </div>
+    </a>
+    </div>
+    {% endif %}
+    <!-- Column -->
+        
+    <!-- Column -->
+    <div class="col-md-6 col-lg-2 col-xlg-3">
+        <div class="card card-hover">
+            <div class="box bg-info text-center">
+                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
+                <h6 class="text-white">Remarks</h6>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    
+    <!-- Column -->
+</div>
+<hr>
