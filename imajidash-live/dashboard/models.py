@@ -112,7 +112,7 @@ class DispatchCargoYiwu(models.Model):
     #     ordering = ['-updated','-created']
     # def __str__(self):
     #     return "%s" % (self.goods)
-    client_name = models.ForeignKey(Client,related_name='dispatched_name', on_delete=models.SET_NULL,null=True,)
+    client_name = models.ForeignKey(Client,related_name='dispatchedyiwu_name', on_delete=models.SET_NULL,null=True,)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     receipt_no = models.CharField(
