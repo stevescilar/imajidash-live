@@ -107,19 +107,16 @@ class dispatchFormYiwu(forms.ModelForm):
         #     }),
         # }
         fields=(
-            'client_name','receipt_no',
+            'client_name',
             'goods','cbm',
             'ctns',
-            'weight',
+            # 'weight',
             'shipping_mark',
             'container_number',
             'remark',
         )
         widgets = {
            'client_name': forms.Select(attrs={
-                'class':'form-control'
-            }),
-            'receipt_no': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'shipping_mark': forms.TextInput(attrs={
@@ -140,9 +137,9 @@ class dispatchFormYiwu(forms.ModelForm):
             'remark': forms.Textarea(attrs={
                 'class':'form-control'
             }),
-             'weight': forms.TextInput(attrs={
-                'class':'form-control'
-            }),
+            #  'weight': forms.TextInput(attrs={
+            #     'class':'form-control'
+            # }),
         }
 
 #-------------------------------------------separation of matters --------------------------------------#
