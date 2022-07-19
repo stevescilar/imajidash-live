@@ -22,16 +22,19 @@
                                 <tr>
                                     
                                     <th scope="col">#</th>
+                                    <th scope="col">Container Number</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">shipping Mark</th>
                                     <!-- <th scope="col">Contact</th>  -->
                                     <!-- <th scope="col">Tracking Number</th> -->
-                                    <th scope="col">Goods</th>
+                                    
                                     <th scope="col">Curtons</th>
                                     <th scope="col">CBM</th>
                                     <!-- <th scope="col">Weight</th> -->
+                                    <th scope="col">Goods</th>
+                                    
+                                    
                                     <th scope="col">Remark</th>
-                                    <th scope="col">shipping Mark</th>
-                                    <th scope="col">Container Number</th>
                                     <!-- <th scope="col">Date Recorded</th> -->
                                 </tr>
                             </thead>
@@ -39,17 +42,19 @@
                                 {% for cargo in cargos_d %} 
                                 <tr>
                                     <th scope="row">{{ cargo.id }}</th>
+                                    <td>{{ cargo.container_number}}</td>
                                     <td>{{ cargo.client_name }}</td>
+                                    <td>{{ cargo.shipping_mark}}</td>
                                     <!-- <td>{{ cargo.contact  }}X</td> -->
                                     <!-- <td>{{ cargo.receipt_no  }}</td> -->
-                                    <td>{{ cargo.goods}}</td>
                                     <td>{{ cargo.ctns}}</td>
                                     <td>{{ cargo.cbm}}</td>
+                                    <td>{{ cargo.goods}}</td>
                                     <!-- <td>{{ cargo.weight}} Kgs</td> -->
                                     
                                     <td>{{ cargo.remark }}</td>
-                                    <td>{{ cargo.shipping_mark}}</td>
-                                    <td>{{ cargo.container_number}}</td>
+                                    
+                                    
                                     <!-- <td>{{ cargo.created}}</td> -->
                                     
                                     
