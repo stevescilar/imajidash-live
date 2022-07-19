@@ -137,13 +137,13 @@ class  MsgFromChina(models.Model):
 
 # -------*****------------------------------Dispatching ----------------------------------------------------#
 class DispatchCargoChina(models.Model):
-    client_name = models.ForeignKey(Client,related_name='dispatchchina_name', on_delete=models.SET_NULL,null=True,)
+    client_name = models.ForeignKey(Client,related_name='dispatched_name', on_delete=models.SET_NULL,null=True,)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     receipt_no = models.CharField(
            max_length = 10,null=True,
            blank=True)
-    # receipt_no = models.CharField(
+    ## receipt_no = models.CharField(
     #        max_length = 6,null=True,
     #        blank=True,
     #        editable=False,
