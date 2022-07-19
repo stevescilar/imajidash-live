@@ -156,7 +156,7 @@ class dispatchFormChina(forms.ModelForm):
             'cbm': forms.TextInput(attrs={
                 'class':'form-control'
             }),
-            'goods': forms.Select(attrs={
+            'goods': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'container_number': forms.TextInput(attrs={
