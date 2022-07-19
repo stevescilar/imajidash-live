@@ -25,7 +25,7 @@ class SalesAgent(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=200)
     # email = models.EmailField(unique=True, error_messages={'unique':"This email has already been registered."})
-    contact = PhoneNumberField(unique=True)
+    contact = PhoneNumberField(unique=True,blank=True,null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     sales_agent = models.ForeignKey(SalesAgent,on_delete = models.SET_NULL,null=True)
