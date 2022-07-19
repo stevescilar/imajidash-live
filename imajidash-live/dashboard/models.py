@@ -124,7 +124,7 @@ class DispatchCargoYiwu(models.Model):
     #        editable=False,
     #        unique=True,
     #        default=receipt_no)
-    goods = models.CharField(max_length=25,null=True,blank=True)
+    goods = models.TextField(null=True,blank=True)
     # goods = models.OneToOneField(ReceivedCargoChina,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
     cbm = models.CharField(max_length=200,blank=True,null=True)
     ctns = models.CharField(max_length=200,blank=True,null=True)
