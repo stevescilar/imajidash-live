@@ -130,7 +130,7 @@ class DispatchCargoYiwu(models.Model):
     ctns = models.CharField(max_length=200,blank=True,null=True)
     weight = models.CharField(max_length=200,blank=True,null=True)
     shipping_mark= models.CharField(
-            max_length = 12, null=True,
+            max_length = 50, null=True,
            blank=True)
     # # shipping_mark= models.CharField(
     #        max_length = 6, null=True,
