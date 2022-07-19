@@ -54,7 +54,7 @@ class CargoFormYiwu(forms.ModelForm):
             'client_name': forms.Select(attrs={
                 'class':'form-control'
             }),
-            'goods': forms.TextInput(attrs={
+            'goods': forms.Textarea(attrs={
                 'class':'form-control'
             }),
             'cbm': forms.TextInput(attrs={
