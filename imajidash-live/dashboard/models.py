@@ -87,31 +87,64 @@ class ReceivedCargoYiwu(models.Model):
         return "%s - %s" % (self.client_name,self.goods)
 # bulk from china
 class DispatchCargoYiwu(models.Model):
-    client_name = models.ForeignKey(Client,related_name='dispatchyiwu_name', on_delete=models.SET_NULL,null=True,)
+    # client_name = models.ForeignKey(Client,related_name='dispatchyiwu_name', on_delete=models.SET_NULL,null=True,)
+    # created = models.DateTimeField(auto_now_add=True)
+    # updated = models.DateTimeField(auto_now=True)
+    # receipt_no = models.CharField(
+    #        max_length = 6,null=True,
+    #        blank=True,
+    #        editable=False,
+    #        unique=True,
+    #        default=receipt_no)
+    # goods = models.OneToOneField(ReceivedCargoYiwu,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
+    # cbm = models.CharField(max_length=200,null=True)
+    # ctns = models.CharField(max_length=200,null=True)
+    # weight = models.CharField(max_length=200,null=True)
+    # shipping_mark= models.CharField(
+    #        max_length = 6, null=True,
+    #        blank=True,
+    #        editable=False,
+    #        unique=True,
+    #        default=shipping_mark)
+    # container_number = models.CharField(max_length=50,verbose_name='Cont-N0:')
+    # remark = models.TextField(null=True,verbose_name='Remarks')  
+    # class meta:
+    #     ordering = ['-updated','-created']
+    # def __str__(self):
+    #     return "%s" % (self.goods)
+    client_name = models.ForeignKey(Client,related_name='dispatched_name', on_delete=models.SET_NULL,null=True,)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     receipt_no = models.CharField(
-           max_length = 6,null=True,
-           blank=True,
-           editable=False,
-           unique=True,
-           default=receipt_no)
-    goods = models.OneToOneField(ReceivedCargoYiwu,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
-    cbm = models.CharField(max_length=200,null=True)
-    ctns = models.CharField(max_length=200,null=True)
-    weight = models.CharField(max_length=200,null=True)
+           max_length = 10,null=True,
+           blank=True)
+    ## receipt_no = models.CharField(
+    #        max_length = 6,null=True,
+    #        blank=True,
+    #        editable=False,
+    #        unique=True,
+    #        default=receipt_no)
+    goods = models.CharField(max_length=25,null=True,blank=True)
+    # goods = models.OneToOneField(ReceivedCargoChina,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
+    cbm = models.CharField(max_length=200,blank=True,null=True)
+    ctns = models.CharField(max_length=200,blank=True,null=True)
+    weight = models.CharField(max_length=200,blank=True,null=True)
     shipping_mark= models.CharField(
-           max_length = 6, null=True,
-           blank=True,
-           editable=False,
-           unique=True,
-           default=shipping_mark)
+            max_length = 12, null=True,
+           blank=True)
+    # # shipping_mark= models.CharField(
+    #        max_length = 6, null=True,
+    #        blank=True,
+    #        editable=False,
+    #        unique=True,
+    #        default=shipping_mark)
     container_number = models.CharField(max_length=50,verbose_name='Cont-N0:')
-    remark = models.TextField(null=True,verbose_name='Remarks')  
+    remark = models.TextField(null=True,verbose_name='Remarks',blank=True)  
     class meta:
         ordering = ['-updated','-created']
     def __str__(self):
         return "%s" % (self.goods)
+
 class  MsgFromChina(models.Model):
     client_name = models.ForeignKey(ReceivedCargoChina,related_name='client_rchina', on_delete=models.SET_NULL,null=True)
     goods = models.ForeignKey(ReceivedCargoChina,on_delete=models.SET_NULL,null=True)

@@ -75,11 +75,43 @@ class CargoFormYiwu(forms.ModelForm):
 class dispatchFormYiwu(forms.ModelForm):
     class Meta:
         model = DispatchCargoYiwu
+        # fields=(
+        #     'client_name',
+        #     'goods','cbm',
+        #     'ctns',
+        #     'weight',
+        #     'container_number',
+        #     'remark',
+        # )
+        # widgets = {
+        #    'client_name': forms.Select(attrs={
+        #         'class':'form-control'
+        #     }),
+        #     'cbm': forms.TextInput(attrs={
+        #         'class':'form-control'
+        #     }),
+        #     'goods': forms.Select(attrs={
+        #         'class':'form-control'
+        #     }),
+        #     'container_number': forms.TextInput(attrs={
+        #         'class':'form-control'
+        #     }),
+        #     'ctns': forms.TextInput(attrs={
+        #         'class':'form-control'
+        #     }),
+        #     'remark': forms.Textarea(attrs={
+        #         'class':'form-control'
+        #     }),
+        #      'weight': forms.TextInput(attrs={
+        #         'class':'form-control'
+        #     }),
+        # }
         fields=(
-            'client_name',
+            'client_name','receipt_no',
             'goods','cbm',
             'ctns',
             'weight',
+            'shipping_mark',
             'container_number',
             'remark',
         )
@@ -87,10 +119,16 @@ class dispatchFormYiwu(forms.ModelForm):
            'client_name': forms.Select(attrs={
                 'class':'form-control'
             }),
+            'receipt_no': forms.TextInput(attrs={
+                'class':'form-control'
+            }),
+            'shipping_mark': forms.TextInput(attrs={
+                'class':'form-control'
+            }),
             'cbm': forms.TextInput(attrs={
                 'class':'form-control'
             }),
-            'goods': forms.Select(attrs={
+            'goods': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'container_number': forms.TextInput(attrs={
@@ -142,15 +180,22 @@ class dispatchFormChina(forms.ModelForm):
     class Meta:
         model = DispatchCargoChina
         fields=(
-            'client_name',
+            'client_name','receipt_no',
             'goods','cbm',
             'ctns',
             'weight',
+            'shipping_mark',
             'container_number',
             'remark',
         )
         widgets = {
            'client_name': forms.Select(attrs={
+                'class':'form-control'
+            }),
+            'receipt_no': forms.TextInput(attrs={
+                'class':'form-control'
+            }),
+            'shipping_mark': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'cbm': forms.TextInput(attrs={
