@@ -141,21 +141,28 @@ class DispatchCargoChina(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     receipt_no = models.CharField(
-           max_length = 6,null=True,
-           blank=True,
-           editable=False,
-           unique=True,
-           default=receipt_no)
-    goods = models.OneToOneField(ReceivedCargoChina,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
+           max_length = 10,null=True,
+           blank=True)
+    # receipt_no = models.CharField(
+    #        max_length = 6,null=True,
+    #        blank=True,
+    #        editable=False,
+    #        unique=True,
+    #        default=receipt_no)
+    goods = models.CharField(max_length=25,null=True)
+    # goods = models.OneToOneField(ReceivedCargoChina,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
     cbm = models.CharField(max_length=200,null=True)
     ctns = models.CharField(max_length=200,null=True)
     weight = models.CharField(max_length=200,null=True)
     shipping_mark= models.CharField(
-           max_length = 6, null=True,
-           blank=True,
-           editable=False,
-           unique=True,
-           default=shipping_mark)
+            max_length = 12, null=True,
+           blank=True)
+    # # shipping_mark= models.CharField(
+    #        max_length = 6, null=True,
+    #        blank=True,
+    #        editable=False,
+    #        unique=True,
+    #        default=shipping_mark)
     container_number = models.CharField(max_length=50,verbose_name='Cont-N0:')
     remark = models.TextField(null=True,verbose_name='Remarks')  
     class meta:
