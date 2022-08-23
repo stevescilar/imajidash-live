@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'smsapp',
     'in_house',
     'accounts',
+    'finance',
 ]
 
 # SESSION TIMEOUT...
