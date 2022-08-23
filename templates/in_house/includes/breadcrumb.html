@@ -1,0 +1,22 @@
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            {% if request.user.is_authenticated %}
+            <h4 class="page-title">Hi <strong style="color: green;"> {{request.user|capfirst }}</strong> Welcome </h4>
+            {% endif %}
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}"> --- Nairobi Warehouse Operations</a></li>
+                        <!-- <li ..class="breadcrumb-item active" aria-current="page"></li> -->
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+        
+
+</div>

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+    
+    <div class="container-fluid">
+        <a href="{% url 'sales-agent' %}" type="button" class="btn btn-outline-primary">ADD NEW Sales Person &nbsp; <span class="badge badge-pill badge-success"></span> </a> <br>
+        <!-- toprow here --> 
+        {% include 'dashboard/includes/toprow.html' %}
+        {% include 'dashboard/includes/alerts.html' %}
+        
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive-md">
+                    <table class="table table-bordered">
+                        
+                        <thead class="thead-dark">
+                            
+                            <tr>
+                                <th scope="col">Serial</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Contact</th> 
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for salesperson in salespersons %} 
+                            <tr>
+                                <td>{{ salesperson.id }}</td>
+                                <td>{{ salesperson.name|capfirst }}</td>
+                                {% if request.user.is_staff %}
+                                <td>{{ salesperson.contact  }}</td>
+                                {% else %}
+                                <td>X</td>
+                                {% endif %}
+                                
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col">
+                
+            </div>
+
+                <div class="col-lg-6">
+                <div class="card">
+                    
+
+                </div>
+
+                <!-- Tabs -->
+                
+            </div>
+        </div>
+        <!-- <div class="card">
+            <h3>ddskdjks</h3> -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+   
+</div>
+
+{% endblock %}

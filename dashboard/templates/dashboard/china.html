@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+    
+    <div class="container-fluid">
+
+        <!-- toprow here --> 
+        {% include 'dashboard/includes/china/trchina.html' %}
+       
+        <div class="row">
+            <div class="col">
+                <h2 style="text-align: center;">Received Cargo(Guangzhou) </h2>
+                <div class="table-responsive-md">
+                    <table class="table table-bordered">
+                        
+                        <thead class="thead-dark">
+                            
+                            <tr>
+                                
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <!-- <th scope="col">Contact</th>  -->
+                                <!-- <th scope="col">Tracking Number</th> -->
+                                <th scope="col">Goods</th>
+                                <th scope="col">Curtons</th>
+                                <th scope="col">Cubic Meter</th>
+                                <th scope="col">Weight</th>
+                                <!-- <th scope="col">shipping Mark</th> -->
+                                <!-- <th scope="col">Sales Person</th> -->
+                                <th scope="col">Remark</th>
+                                <th scope="col">Date Received</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for cargo in cargos %} 
+                            <tr>
+                                <th scope="row">{{ cargo.id }}</th>
+                                <td>{{ cargo.client_name }}</td>
+                                <!-- <td>{{ cargo.contact  }}X</td> -->
+                                <!-- <td>{{ cargo.receipt_no  }}</td> -->
+                                <td>{{ cargo.goods}}</td>
+                                <td>{{ cargo.ctns}}</td>
+                                <td>{{ cargo.cbm}}</td>
+                                <td>{{ cargo.weight}} Kgs</td>
+                                <!-- <td>{{ cargo.shipping_mark}}</td> -->
+                                <!-- <td>{{ sales_agent.name}}</td> -->
+                                <td>{{ cargo.remark }}</td>
+                                <td>{{ cargo.created}}</td>
+                                
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col">
+                <!-- <div class="responsive">
+                    <table class="table table-bordered">
+                        
+                        <thead class="thead-dark">
+                            
+                            <tr>
+                                
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Contact</th> 
+                                <th scope="col">Tracking Number</th>
+                                <th scope="col">Goods</th>
+                                <th scope="col">Curtons</th>
+                                <th scope="col">Cubic Meter</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">shipping Mark</th>
+                                <th scope="col">Sales Person</th>
+                                <th scope="col">Date Received(china)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for client in clients %} 
+                            <tr>
+                                <th scope="row">{{ client.id }}</th>
+                                <td>{{ client.name }}</td>
+                                <td>{{ client.contact  }}</td>
+                                <td>{{ client.receipt_no }}</td>
+                                <td>{{ client.goods }}</td>
+                                <td>{{ client.ctns}}</td>
+                                <td>{{ client.cbm}}</td>
+                                <td>{{ client.weight }}</td>
+                                <td>{{ client.shipping_mark }}</td>
+                                <td>{{ client.sales_agent}}</td>
+                                <td>{{ client.created}}</td>
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div> -->
+            </div>
+
+                <div class="col-lg-6">
+                <div class="card">
+                    
+
+                </div>
+
+                <!-- Tabs -->
+                
+            </div>
+        </div>
+        <!-- <div class="card">
+            <h3>ddskdjks</h3> -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+   
+</div>
+
+{% endblock %}

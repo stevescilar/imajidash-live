@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+   
+    <div class="container-fluid">
+        {% include 'in_house/includes/breadcrumb.html' %}
+        <hr>    
+        <h1 style="text-align: center;">Receive Cargo </h1>
+     <h4 class="page-title"> </h4>
+
+        <div class="container px-4">
+        <div class="row gx-5">
+        <div class="col">
+            <div class="p-3 border bg-light">
+                <div class="form-group">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Submit" class="btn btn-primary"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">
+                <div   div class="chat-box scrollable" style="height:690px;">
+                <!-- <div class="p-3 border bg-light" style="overflow-y: scroll;"> -->
+                <h3>Customers</h3>
+                    {% for client in clients %}
+                    <ul class="chat-list">                
+                        <li class="chat-item">
+                            <div class="chat-img"><img src="{% static 'images/users/1.jpg'  %}" alt="user"></div>
+                            <div class="chat-content">
+                                <h5>Name: {{ client.name|title }}</h5>
+                                <h6 class="font-medium"> Contact: {{ client.contact }} </h6>
+                            </div> 
+                                <div class="chat-time"> Registered on: {{ client.created }}</div>
+                        </li>
+                    </ul>
+
+                    {% endfor %}
+            
+                </div>
+            </div>
+        </div> 
+
+    </div>   
+</div>
+{% endblock %}
