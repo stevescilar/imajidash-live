@@ -151,7 +151,7 @@ class CargoFormChina(forms.ModelForm):
             'client_name','goods','cbm','ctns','weight','remark',
         )
         widgets = {
-            'client_name': forms.Select(attrs={
+            'client_name': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'goods': forms.TextInput(attrs={
@@ -230,10 +230,10 @@ class CargoFormKenya(forms.ModelForm):
             'client_name','goods','cbm','ctns','weight','remark',
         )
         widgets = {
-            'client_name': forms.Select(attrs={
+            'client_name': forms.TextInput(attrs={
                 'class':'form-control'
             }),
-            'goods': forms.Select(attrs={
+            'goods': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'cbm': forms.TextInput(attrs={
@@ -266,13 +266,13 @@ class dispatchFormKenya(forms.ModelForm):
             'Receiver_contact'
         )
         widgets = {
-           'client_name': forms.Select(attrs={
+           'client_name': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'cbm': forms.TextInput(attrs={
                 'class':'form-control'
             }),
-            'goods': forms.Select(attrs={
+            'goods': forms.TextInput(attrs={
                 'class':'form-control'
             }),
             'delivery_number': forms.TextInput(attrs={

@@ -49,7 +49,8 @@ class ImajiAgent(models.Model):
 #-------------------------------------------separation of matters --------------------------------------#
 # -------*****------------------------------Receiving ----------------------------------------------------#
 class ReceivedCargoChina(models.Model):
-    client_name = models.ForeignKey(Client,on_delete=models.SET_NULL,null=True)
+    # client_name = models.ForeignKey(Client,on_delete=models.SET_NULL,null=True)
+    client_name = models.CharField(max_length=250,null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     goods = models.CharField(max_length=200,null=True)
@@ -212,10 +213,12 @@ class DispatchCargoChina(models.Model):
 # -------*****------------------------------Receiving ----------------------------------------------------#
 
 class ReceivedCargoKenya(models.Model):
-    client_name = models.ForeignKey(Client,on_delete=models.SET_NULL,null=True)
+    # client_name = models.ForeignKey(Client,on_delete=models.SET_NULL,null=True)
+    client_name = models.CharField(max_length=250, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    goods = models.OneToOneField(DispatchCargoChina,on_delete=models.SET_NULL,null=True,unique=True)
+    # goods = models.OneToOneField(ReceivedCargoChina,on_delete=models.SET_NULL,null=True,unique=True)
+    goods = models.CharField(max_length=250, null=True)
     cbm = models.CharField(max_length=200,null=True)
     ctns = models.CharField(max_length=200,null=True)
     weight = models.CharField(max_length=200)
