@@ -5,7 +5,7 @@ from django.db import models
 import os
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
-from .utils import receipt_no , shipping_mark
+from .utils import receipt_no , shipping_mark,delivery_no
 
 class Subject(models.Model):
     name = models.CharField(max_length=200)
@@ -235,7 +235,10 @@ class DispatchCargoKenya(models.Model):
     client_name = models.ForeignKey(Client,related_name='dispatch_name', on_delete=models.SET_NULL,null=True,)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    delivery_number = models.CharField(max_length=50)
+    # delivery_number = models.CharField(max_length=50)
+    delivery_no = models.CharField(
+           max_length = 10,null=True,
+           blank=True)
     goods = models.OneToOneField(ReceivedCargoKenya,on_delete=models.SET_NULL,null=True,unique=True)#to be tried in productin
     cbm = models.CharField(max_length=200,null=True)
     ctns = models.CharField(max_length=200,null=True)

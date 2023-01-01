@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from dashboard.utils import receipt_no
+from dashboard.utils import receipt_no,delivery_no
 from .models import Client, SalesAgent , DispatchCargoChina, ReceivedCargoKenya, Remark ,ReceivedCargoChina,DispatchCargoKenya,ReceivedCargoYiwu,DispatchCargoYiwu 
 
 class ClientForm(forms.ModelForm):
@@ -261,7 +261,7 @@ class dispatchFormKenya(forms.ModelForm):
             'ctns',
             'weight',
             'remark',
-            'delivery_number',
+            # 'delivery_number',
             'received_by',
             'Receiver_contact'
         )
@@ -275,9 +275,9 @@ class dispatchFormKenya(forms.ModelForm):
             'goods': forms.TextInput(attrs={
                 'class':'form-control'
             }),
-            'delivery_number': forms.TextInput(attrs={
-                'class':'form-control'
-            }),
+            # 'delivery_number': forms.TextInput(attrs={
+            #     'class':'form-control'
+            # }),
             'ctns': forms.TextInput(attrs={
                 'class':'form-control'
             }),
