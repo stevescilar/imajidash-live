@@ -261,7 +261,7 @@ class dispatchFormKenya(forms.ModelForm):
             'ctns',
             'weight',
             'remark',
-            # 'delivery_number',
+            # 'delivery_number',//changing
             'received_by',
             'Receiver_contact'
         )
